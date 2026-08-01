@@ -13,10 +13,10 @@ import './globals.css'
 export const metadata: Metadata = {
 	metadataBase: new URL(SITE_URL),
 	title: {
-		default: 'Burrowise Landing',
-		template: '%s | Burrowise Landing',
+		default: 'Burrowise',
+		template: '%s | Burrowise',
 	},
-	description: 'Burrowise Landing — Powered by Recursive Solutions',
+	description: 'Burrowise is a local-first knowledge platform for capturing voice, preserving source truth, and turning conversations into durable intelligence.',
 }
 
 export default async function RootLayout({

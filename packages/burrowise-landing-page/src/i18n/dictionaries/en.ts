@@ -5,13 +5,13 @@ const en = {
 	'nav.contact': 'Contact',
 
 	// Hero
-	'hero.title': 'Welcome to Burrowise Landing',
-	'hero.subtitle': 'AI-powered content, social media, and analytics — all managed for you.',
+	'hero.title': 'Capture thought. Build durable knowledge.',
+	'hero.subtitle': 'Burrowise turns spoken insight into structured, searchable intelligence for teams that work in depth.',
 	'hero.cta.blog': 'Read Our Blog',
-	'hero.cta.contact': 'Get in Touch',
+	'hero.cta.contact': 'Book a setup call',
 
 	// Features
-	'features.heading': 'Everything You Need to Grow',
+	'features.heading': 'A local-first workflow from capture to action',
 	'features.ai.title': 'AI Blog Content',
 	'features.ai.description': 'Automatically generated, SEO-optimized blog posts tailored to your business.',
 	'features.social.title': 'Social Media Sync',
@@ -20,9 +20,9 @@ const en = {
 	'features.analytics.description': 'Track visitor engagement and content performance in real time.',
 
 	// CTA
-	'cta.heading': 'Ready to Get Started?',
-	'cta.subtitle': 'Contact us today to learn how our AI-powered growth engine can transform your online presence.',
-	'cta.button': 'Contact Us',
+	'cta.heading': 'Ready to build a real memory system for your team?',
+	'cta.subtitle': 'Launch Burrowise with your process, your provider boundaries, and your knowledge model from day one.',
+	'cta.button': 'Talk to us',
 
 	// Blog
 	'blog.heading': 'Blog',
@@ -61,7 +61,7 @@ const en = {
 	'footer.cookie.policy': 'Cookie Policy',
 	'footer.legal.notice': 'Legal Notice',
 	'footer.copyright': '\u00A9 {year} Burrowise Landing. All rights reserved.',
-	'footer.powered.by': 'Powered by Recursive Solutions',
+	'footer.powered.by': 'Powered by Recursive Solutions AI',
 
 	// Theme
 	'theme.label': 'Theme',

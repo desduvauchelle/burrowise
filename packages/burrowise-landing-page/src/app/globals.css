@@ -5,6 +5,238 @@
 
 @custom-variant dark (&:where([data-theme='dark'], [data-theme='dark'] *));
 
+:root {
+  --bg: #f3f0e8;
+  --surface: #fbfaf6;
+  --surface-subtle: #ece8dd;
+  --text: #252a22;
+  --text-muted: #62695c;
+  --border: #dad4c6;
+  --forest: #3f6b4f;
+  --forest-strong: #31543e;
+  --forest-soft: #dce8dc;
+  --clay: #a76042;
+  --clay-strong: #884b34;
+  --hero-shadow: 0 20px 48px rgba(55, 45, 34, 0.1);
+  color-scheme: light;
+}
+
+:root[data-theme='dark'] {
+  --bg: #191d18;
+  --surface: #222820;
+  --surface-subtle: #272d26;
+  --text: #f0ede3;
+  --text-muted: #b7b9ac;
+  --border: #383f36;
+  --forest: #86b38a;
+  --forest-strong: #a5c9a7;
+  --forest-soft: #2b3c2f;
+  --clay: #c27a58;
+  --clay-strong: #d58b67;
+  --hero-shadow: 0 20px 44px rgba(0, 0, 0, 0.24);
+  color-scheme: dark;
+}
+
+@theme {
+  --font-sans: "Avenir Next", "SF Pro Text", "Segoe UI", sans-serif;
+}
+
+html,
 body {
-  @apply bg-base-100 text-base-content;
+  min-height: 100%;
+}
+
+a:focus-visible,
+button:focus-visible,
+summary:focus-visible,
+input:focus-visible,
+textarea:focus-visible,
+select:focus-visible {
+  outline: 3px solid color-mix(in srgb, var(--forest) 88%, white 12%);
+  outline-offset: 2px;
+}
+
+.skip-link {
+  position: absolute;
+  left: 0.75rem;
+  top: 0.5rem;
+  padding: 0.55rem 0.9rem;
+  border-radius: 0.5rem;
+  background: var(--forest-strong);
+  color: #f6f2e8;
+  font-size: 0.85rem;
+  font-weight: 700;
+  transform: translateY(-180%);
+  transition: transform 140ms ease;
+  z-index: 70;
+}
+
+.skip-link:focus-visible {
+  transform: translateY(0);
+}
+
+body {
+  background: radial-gradient(circle at 12% 0%, color-mix(in srgb, var(--forest-soft) 52%, transparent), transparent 42%), var(--bg);
+  color: var(--text);
+}
+
+.hero-shell {
+  position: relative;
+  overflow: clip;
+  background:
+    linear-gradient(180deg, color-mix(in srgb, var(--forest-soft) 46%, transparent), transparent 36%),
+    linear-gradient(0deg, color-mix(in srgb, var(--surface-subtle) 72%, transparent), transparent 40%);
+}
+
+.hero-shell::after {
+  content: '';
+  position: absolute;
+  inset: auto -12% -30% auto;
+  width: min(520px, 80vw);
+  aspect-ratio: 1;
+  border-radius: 999px;
+  background: radial-gradient(circle at 40% 40%, color-mix(in srgb, var(--clay) 26%, transparent), transparent 65%);
+  pointer-events: none;
+}
+
+.hero-title {
+  font-size: clamp(2.2rem, 6vw, 4.3rem);
+  line-height: 1.03;
+  letter-spacing: -0.03em;
+  font-weight: 700;
+}
+
+.hero-panel {
+  position: relative;
+  padding: 1.4rem;
+  border: 1px solid color-mix(in srgb, var(--border) 85%, transparent);
+  border-radius: 18px;
+  background: linear-gradient(160deg, color-mix(in srgb, var(--surface) 96%, transparent), color-mix(in srgb, var(--surface-subtle) 84%, transparent));
+  box-shadow: var(--hero-shadow);
+}
+
+.section-band {
+  padding-block: clamp(3.5rem, 9vw, 6rem);
+}
+
+.section-band-muted {
+  background: color-mix(in srgb, var(--surface-subtle) 44%, transparent);
+  border-block: 1px solid color-mix(in srgb, var(--border) 72%, transparent);
+}
+
+.section-cta {
+  background: linear-gradient(135deg, var(--forest), var(--forest-strong));
+  color: #f6f2e8;
+}
+
+.section-kicker {
+  display: inline-block;
+  font-size: 0.76rem;
+  font-weight: 700;
+  letter-spacing: 0.11em;
+  text-transform: uppercase;
+  color: var(--forest);
+}
+
+.section-kicker-light {
+  color: color-mix(in srgb, #f6f2e8 82%, transparent);
+}
+
+.section-heading-row {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 1rem;
+  margin-bottom: 2.5rem;
+  flex-wrap: wrap;
+}
+
+.surface-card {
+  border: 1px solid color-mix(in srgb, var(--border) 82%, transparent);
+  border-radius: 16px;
+  background: color-mix(in srgb, var(--surface) 94%, transparent);
+  box-shadow: 0 10px 28px color-mix(in srgb, var(--text) 7%, transparent);
+}
+
+.feature-line {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.55rem;
+  line-height: 1.5;
+}
+
+.feature-line::before {
+  content: '';
+  margin-top: 0.42rem;
+  width: 0.48rem;
+  height: 0.48rem;
+  border-radius: 999px;
+  background: var(--clay);
+  box-shadow: 0 0 0 3px color-mix(in srgb, var(--clay) 14%, transparent);
+  flex: 0 0 auto;
+}
+
+.flow-step {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 0.7rem;
+  padding: 0.75rem 0.9rem;
+  border-radius: 12px;
+  border: 1px solid color-mix(in srgb, var(--border) 80%, transparent);
+  background: color-mix(in srgb, var(--surface-subtle) 38%, transparent);
+}
+
+.flow-step span {
+  display: inline-grid;
+  place-items: center;
+  min-width: 2ch;
+  font-size: 0.77rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  color: var(--forest);
+}
+
+.flow-step strong {
+  font-size: 0.9rem;
+  line-height: 1.4;
+  color: color-mix(in srgb, var(--text) 93%, transparent);
+}
+
+.text-forest {
+  color: var(--forest);
+}
+
+.legal-shell {
+  padding-block: clamp(2.8rem, 8vw, 5rem);
+}
+
+.legal-card {
+  border-radius: 18px;
+  border: 1px solid color-mix(in srgb, var(--border) 86%, transparent);
+  background: color-mix(in srgb, var(--surface) 96%, transparent);
+  box-shadow: var(--hero-shadow);
+  padding: clamp(1.2rem, 3vw, 2.2rem);
+}
+
+.prose.burrow-legal {
+  max-width: none;
+  color: color-mix(in srgb, var(--text) 92%, transparent);
+}
+
+.prose.burrow-legal h2 {
+  margin-top: 1.8rem;
+  margin-bottom: 0.6rem;
+  font-size: clamp(1.2rem, 2.4vw, 1.45rem);
+  font-weight: 700;
+  letter-spacing: -0.02em;
+}
+
+.prose.burrow-legal p,
+.prose.burrow-legal li {
+  line-height: 1.72;
+  color: color-mix(in srgb, var(--text) 88%, transparent);
+}
+
+.prose.burrow-legal strong {
+  color: color-mix(in srgb, var(--text) 96%, transparent);
 }

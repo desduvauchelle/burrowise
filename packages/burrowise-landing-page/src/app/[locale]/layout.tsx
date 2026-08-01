@@ -35,10 +35,11 @@ export default async function LocaleLayout({
 
 	return (
 		<>
+			<a href="#main-content" className="skip-link">Skip to content</a>
 			{/* Site-wide Organization / LocalBusiness structured data */}
 			{business && <BusinessJsonLd config={business} />}
 			<Header dict={dict} locale={locale} />
-			<main className="flex-1">{children}</main>
+			<main id="main-content" className="flex-1">{children}</main>
 			<Footer dict={dict} locale={locale} />
 		</>
 	)
