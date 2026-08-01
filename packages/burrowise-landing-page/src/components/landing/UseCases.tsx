@@ -1,4 +1,5 @@
 import { ScrollReveal } from './ScrollReveal'
+import { InlineProductVisual } from './ProductVisuals'
 
 const useCases = [
 	{
@@ -48,6 +49,10 @@ export function UseCases() {
 							</ul>
 						</article>
 					))}
+				</ScrollReveal>
+
+				<ScrollReveal y={24} className="mt-8">
+					<InlineProductVisual title="Search + Chat Workspace" variant="search" />
 				</ScrollReveal>
 			</div>
 		</section>

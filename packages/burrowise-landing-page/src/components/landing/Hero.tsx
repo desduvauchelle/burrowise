@@ -2,6 +2,7 @@ import Link from 'next/link'
 import type { Dictionary } from '@/i18n'
 import { localizedPath } from '@/lib/i18n-utils'
 import { ScrollReveal } from './ScrollReveal'
+import { InlineProductVisual } from './ProductVisuals'
 
 export function Hero({ dict, locale }: { dict: Dictionary; locale: string }) {
 	return (
@@ -43,6 +44,9 @@ export function Hero({ dict, locale }: { dict: Dictionary; locale: string }) {
 							<li className="feature-line">AI support with explicit provider visibility and control</li>
 							<li className="feature-line">One workflow from raw voice capture to reusable knowledge</li>
 						</ul>
+						<div className="mt-6">
+							<InlineProductVisual title="Live Capture Console" variant="capture" />
+						</div>
 					</ScrollReveal>
 				</div>
 			</div>

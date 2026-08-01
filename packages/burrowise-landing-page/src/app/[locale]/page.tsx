@@ -10,6 +10,7 @@ import { Hero } from '@/components/landing/Hero'
 import { Features } from '@/components/landing/Features'
 import { UseCases } from '@/components/landing/UseCases'
 import { FeatureMatrix } from '@/components/landing/FeatureMatrix'
+import { ProductVisualStrip } from '@/components/landing/ProductVisuals'
 import { ProofStrip } from '@/components/landing/ProofStrip'
 import { FaqSection, faqJsonLd } from '@/components/landing/FaqSection'
 import { CTA } from '@/components/landing/CTA'
@@ -49,6 +50,7 @@ export default async function HomePage({
 				dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd()) }}
 			/>
 			<Hero dict={dict} locale={locale} />
+			<ProductVisualStrip />
 			<Features />
 			<UseCases />
 			<FeatureMatrix />

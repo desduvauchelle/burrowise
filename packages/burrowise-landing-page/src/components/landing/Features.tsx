@@ -1,4 +1,5 @@
 import { ScrollReveal } from './ScrollReveal'
+import { InlineProductVisual } from './ProductVisuals'
 
 const pillars = [
 	{
@@ -56,6 +57,9 @@ export function Features() {
 						<div>
 							<p className="section-kicker">Workflow</p>
 							<h3 className="text-2xl font-semibold tracking-tight">From thought to action in one chain</h3>
+							<div className="mt-5">
+								<InlineProductVisual title="Knowledge Workspace" variant="workspace" />
+							</div>
 						</div>
 						<ol className="grid gap-3 md:grid-cols-2">
 							{flow.map((step, index) => (

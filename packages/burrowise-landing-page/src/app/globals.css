@@ -206,6 +206,190 @@ body {
   color: var(--forest);
 }
 
+.mock-window {
+  border: 1px solid color-mix(in srgb, var(--border) 84%, transparent);
+  border-radius: 14px;
+  overflow: hidden;
+  background: color-mix(in srgb, var(--surface) 96%, transparent);
+  box-shadow: 0 14px 32px color-mix(in srgb, var(--text) 8%, transparent);
+}
+
+.mock-window__head {
+  display: flex;
+  align-items: center;
+  gap: 0.7rem;
+  padding: 0.65rem 0.85rem;
+  border-bottom: 1px solid color-mix(in srgb, var(--border) 78%, transparent);
+  background: color-mix(in srgb, var(--surface-subtle) 42%, transparent);
+  font-size: 0.75rem;
+  letter-spacing: 0.02em;
+  color: color-mix(in srgb, var(--text) 88%, transparent);
+}
+
+.mock-window__dots {
+  display: inline-flex;
+  gap: 0.28rem;
+}
+
+.mock-window__dots span {
+  width: 0.45rem;
+  height: 0.45rem;
+  border-radius: 999px;
+  background: color-mix(in srgb, var(--text-muted) 38%, transparent);
+}
+
+.mock-window__body {
+  display: grid;
+  grid-template-columns: 78px 1fr;
+  min-height: 210px;
+  background: color-mix(in srgb, var(--surface) 96%, transparent);
+}
+
+.mock-window__body.stack {
+  display: block;
+  padding: 0.8rem;
+  min-height: 240px;
+}
+
+.mock-nav-col {
+  padding: 0.65rem 0.45rem;
+  display: grid;
+  gap: 0.4rem;
+  border-right: 1px solid color-mix(in srgb, var(--border) 70%, transparent);
+  background: color-mix(in srgb, var(--surface-subtle) 40%, transparent);
+}
+
+.mock-pill {
+  height: 1.35rem;
+  border-radius: 0.45rem;
+  background: color-mix(in srgb, var(--border) 56%, transparent);
+}
+
+.mock-pill.active {
+  background: color-mix(in srgb, var(--forest) 42%, var(--surface-subtle));
+}
+
+.mock-main-col {
+  padding: 0.75rem;
+  display: grid;
+  gap: 0.7rem;
+}
+
+.mock-record-panel {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 0.5rem 0.65rem;
+  align-items: center;
+  padding: 0.65rem;
+  border-radius: 0.65rem;
+  background: color-mix(in srgb, var(--forest-soft) 46%, transparent);
+}
+
+.mock-record-dot {
+  width: 0.65rem;
+  height: 0.65rem;
+  border-radius: 999px;
+  background: var(--clay);
+  box-shadow: 0 0 0 4px color-mix(in srgb, var(--clay) 16%, transparent);
+  grid-row: span 2;
+}
+
+.mock-transcript-block {
+  padding: 0.65rem;
+  border-radius: 0.65rem;
+  border: 1px solid color-mix(in srgb, var(--border) 80%, transparent);
+  background: color-mix(in srgb, var(--surface-subtle) 32%, transparent);
+  display: grid;
+  gap: 0.45rem;
+}
+
+.mock-line {
+  height: 0.45rem;
+  width: 72%;
+  border-radius: 999px;
+  background: color-mix(in srgb, var(--text-muted) 28%, transparent);
+}
+
+.mock-line.wide {
+  width: 92%;
+}
+
+.mock-line.short {
+  width: 58%;
+  height: 0.4rem;
+}
+
+.mock-toolbar {
+  display: flex;
+  gap: 0.75rem;
+  margin-bottom: 0.85rem;
+}
+
+.mock-grid-2 {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0.6rem;
+}
+
+.mock-card {
+  padding: 0.65rem;
+  border-radius: 0.65rem;
+  border: 1px solid color-mix(in srgb, var(--border) 80%, transparent);
+  background: color-mix(in srgb, var(--surface-subtle) 34%, transparent);
+  display: grid;
+  gap: 0.45rem;
+}
+
+.mock-search-bar {
+  height: 1.7rem;
+  border-radius: 0.55rem;
+  border: 1px solid color-mix(in srgb, var(--border) 78%, transparent);
+  background: color-mix(in srgb, var(--surface-subtle) 36%, transparent);
+  margin-bottom: 0.8rem;
+}
+
+.mock-split {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.6rem;
+}
+
+.mock-results,
+.mock-chat {
+  padding: 0.65rem;
+  border-radius: 0.65rem;
+  border: 1px solid color-mix(in srgb, var(--border) 80%, transparent);
+  background: color-mix(in srgb, var(--surface-subtle) 34%, transparent);
+  display: grid;
+  gap: 0.45rem;
+  min-height: 128px;
+}
+
+.mock-bubble {
+  height: 1.05rem;
+  border-radius: 0.55rem;
+  background: color-mix(in srgb, var(--forest) 30%, transparent);
+  width: 84%;
+}
+
+.mock-bubble.user {
+  margin-left: auto;
+  background: color-mix(in srgb, var(--clay) 38%, transparent);
+  width: 72%;
+}
+
+@media (max-width: 768px) {
+  .mock-window__body {
+    grid-template-columns: 58px 1fr;
+    min-height: 188px;
+  }
+
+  .mock-split,
+  .mock-grid-2 {
+    grid-template-columns: 1fr;
+  }
+}
+
 .legal-shell {
   padding-block: clamp(2.8rem, 8vw, 5rem);
 }
