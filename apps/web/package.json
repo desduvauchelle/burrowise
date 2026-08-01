@@ -1,0 +1,53 @@
+{
+  "name": "web",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint",
+    "typecheck": "tsc --noEmit",
+    "test": "vitest",
+    "pull-forms": "growth-engine-pull-forms",
+    "prepare": "husky"
+  },
+  "lint-staged": {
+    "*.{ts,tsx}": [
+      "eslint --fix"
+    ]
+  },
+  "dependencies": {
+    "@growth-engine/sdk-client": "github:recursive-solutions-ai/growth-engine-sdk-client#v0.1.52",
+    "@growth-engine/sdk-server": "github:recursive-solutions-ai/growth-engine-sdk-server#v0.1.52",
+    "@libsql/client": "^0.17.4",
+    "@second-brain/sync-protocol": "file:../../packages/sync-protocol",
+    "clsx": "2.1.1",
+    "daisyui": "5.0.35",
+    "gsap": "3.12.7",
+    "next": "16.2.11",
+    "react": "19.2.4",
+    "react-dom": "19.2.4",
+    "tailwind-merge": "3.0.2",
+    "zod": "3.24.0"
+  },
+  "devDependencies": {
+    "@tailwindcss/postcss": "4.1.4",
+    "@tailwindcss/typography": "0.5.16",
+    "@types/node": "22.15.3",
+    "@types/react": "19.2.3",
+    "@types/react-dom": "19.2.3",
+    "husky": "9.1.7",
+    "lint-staged": "16.4.0",
+    "postcss": "8.5.23",
+    "sharp": "0.35.3",
+    "tailwindcss": "4.1.4",
+    "typescript": "5.8.3",
+    "vitest": "3.2.7"
+  },
+  "overrides": {
+    "drizzle-orm": "0.45.2",
+    "postcss": "8.5.23",
+    "sharp": "0.35.3"
+  }
+}

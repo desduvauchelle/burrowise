@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+  <key>CFBundleURLTypes</key>
+  <array>
+    <dict>
+      <key>CFBundleURLName</key>
+      <string>Burrowise Share Intake</string>
+      <key>CFBundleURLSchemes</key>
+      <array>
+        <string>burrowise</string>
+      </array>
+    </dict>
+  </array>
+  <key>NSMicrophoneUsageDescription</key>
+  <string>Burrowise records only while you hold the capture button so it can save your spoken thoughts locally.</string>
+  <key>NSSpeechRecognitionUsageDescription</key>
+  <string>Burrowise can use Apple Speech to turn recordings into private, searchable transcripts.</string>
+</dict>
+</plist>

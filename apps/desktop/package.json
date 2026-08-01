@@ -1,0 +1,42 @@
+{
+  "name": "desktop",
+  "version": "0.5.1",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build && node scripts/prepare-sites-build.mjs",
+    "preview": "vite preview",
+    "tauri": "tauri",
+    "tauri:dev": "tauri dev",
+    "tauri:build": "tauri build",
+    "tauri:share-extension": "node scripts/build-macos-share-extension.mjs",
+    "tauri:sign-local": "node scripts/sign-macos-local.mjs",
+    "tauri:verify": "node scripts/verify-macos-bundle.mjs",
+    "tauri:package-dmg": "node scripts/package-macos-dmg.mjs",
+    "tauri:release": "tauri build --bundles app && npm run tauri:share-extension && npm run tauri:sign-local && npm run tauri:verify && npm run tauri:package-dmg",
+    "typecheck": "tsc --noEmit",
+    "check": "npm run typecheck && npm run build && npm run test:services && npm run test:sites && cargo test --manifest-path src-tauri/Cargo.toml",
+    "test:services": "node --test tests/sync-url.test.mjs",
+    "test:sites": "node --test tests/sites-worker.test.mjs"
+  },
+  "dependencies": {
+    "@phosphor-icons/react": "^2.1.10",
+    "@second-brain/sync-protocol": "file:../../packages/sync-protocol",
+    "@tauri-apps/api": "^2.11.1",
+    "@tauri-apps/plugin-dialog": "^2.7.2",
+    "@vitejs/plugin-react": "5.0.4",
+    "react": "19.2.0",
+    "react-dom": "19.2.0",
+    "react-markdown": "^10.1.0",
+    "remark-gfm": "^4.0.1",
+    "vite": "6.4.3"
+  },
+  "devDependencies": {
+    "@tauri-apps/cli": "^2.11.4",
+    "@types/react": "19.2.3",
+    "@types/react-dom": "19.2.3",
+    "postcss": "8.5.23",
+    "typescript": "5.8.3"
+  }
+}

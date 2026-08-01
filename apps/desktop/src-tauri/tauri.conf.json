@@ -1,0 +1,46 @@
+{
+  "$schema": "https://schema.tauri.app/config/2",
+  "productName": "Burrowise",
+  "version": "0.5.1",
+  "identifier": "ai.recursivesolutions.secondbrain",
+  "build": {
+    "beforeDevCommand": "npm run dev -- --port 4173",
+    "devUrl": "http://localhost:4173",
+    "beforeBuildCommand": "npm run build",
+    "frontendDist": "../dist/client"
+  },
+  "app": {
+    "windows": [
+      {
+        "title": "Burrowise",
+        "width": 1440,
+        "height": 960,
+        "minWidth": 1080,
+        "minHeight": 720,
+        "resizable": true
+      }
+    ],
+    "security": {
+      "csp": null
+    }
+  },
+  "bundle": {
+    "active": true,
+    "targets": "all",
+    "icon": [
+      "icons/32x32.png",
+      "icons/128x128.png",
+      "icons/128x128@2x.png",
+      "icons/icon.icns",
+      "icons/icon.ico"
+    ],
+    "category": "Productivity",
+    "shortDescription": "A private place to follow your thoughts deeper.",
+    "longDescription": "Capture spoken thoughts, preserve them as Markdown, and explore connected ideas locally."
+    ,
+    "macOS": {
+      "entitlements": "Burrowise.entitlements",
+      "minimumSystemVersion": "13.0"
+    }
+  }
+}
